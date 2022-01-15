@@ -20,4 +20,13 @@ public void OneAloneCellHasNoNeighbours(){
     assertThat(numberOfNeighbours).isEqualTo(0);
 
 }
+    @Test
+    public void CheckThatGameFindsOneNeighbor() {
+
+        gameOfLife.cellIsAlive(1, 3);
+
+        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+
+        assertThat(neighboursCount).isEqualTo(1);
+    }
 }

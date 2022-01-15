@@ -34,4 +34,9 @@ public class GameOfLife {
         }
         return aliveNeighbour;
     }
+
+
+    public void cellIsAlive(int row, int column) {
+        grid[row][column] = 1;
+    }
 }
