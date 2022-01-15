@@ -1,6 +1,7 @@
 import GameOfLife.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class GameOfLifeTest {
 
