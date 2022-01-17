@@ -28,11 +28,15 @@ public class GameOfLife {
 
         for (int[] ints : neighbourCounter) {
 
-            if (row >= 0 && column >= 0 && row < numberOfRow && column < numberOfColumn) {
+            if (isInTheGameBoard(row, column)) {
                 aliveNeighbour += grid[ints[0]][ints[1]];
             }
         }
         return aliveNeighbour;
+    }
+
+    private boolean isInTheGameBoard(int row, int column) {
+        return row >= 0 && column >= 0 && row < numberOfRow && column < numberOfColumn;
     }
 
 
