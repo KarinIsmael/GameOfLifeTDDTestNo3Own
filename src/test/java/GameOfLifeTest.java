@@ -7,19 +7,20 @@ public class GameOfLifeTest {
 
     private final GameOfLife gameOfLife;
 
-    public GameOfLifeTest(){
-        gameOfLife = new GameOfLife(4,8);
+    public GameOfLifeTest() {
+        gameOfLife = new GameOfLife(4, 8);
     }
 
 
-@Test
-public void OneAloneCellHasNoNeighbours(){
+    @Test
+    public void OneAloneCellHasNoNeighbours() {
 
-    int numberOfNeighbours = gameOfLife.numberOfAliveNeighbours(1, 2);
+        int numberOfNeighbours = gameOfLife.numberOfAliveNeighbours(1, 2);
 
-    assertThat(numberOfNeighbours).isEqualTo(0);
+        assertThat(numberOfNeighbours).isEqualTo(0);
 
-}
+    }
+
     @Test
     public void CheckThatGameFindsOneNeighbor() {
 
@@ -46,7 +47,7 @@ public void OneAloneCellHasNoNeighbours(){
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
+        gameOfLife.cellIsAlive(1, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -58,8 +59,8 @@ public void OneAloneCellHasNoNeighbours(){
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
-        gameOfLife.cellIsAlive(2,1);
+        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.cellIsAlive(2, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -71,9 +72,9 @@ public void OneAloneCellHasNoNeighbours(){
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
-        gameOfLife.cellIsAlive(2,1);
-        gameOfLife.cellIsAlive(1,2);
+        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.cellIsAlive(2, 1);
+        gameOfLife.cellIsAlive(1, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -85,10 +86,10 @@ public void OneAloneCellHasNoNeighbours(){
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
-        gameOfLife.cellIsAlive(2,1);
-        gameOfLife.cellIsAlive(1,2);
-        gameOfLife.cellIsAlive(3,3);
+        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.cellIsAlive(2, 1);
+        gameOfLife.cellIsAlive(1, 2);
+        gameOfLife.cellIsAlive(3, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -100,27 +101,28 @@ public void OneAloneCellHasNoNeighbours(){
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
-        gameOfLife.cellIsAlive(2,1);
-        gameOfLife.cellIsAlive(1,2);
-        gameOfLife.cellIsAlive(3,3);
-        gameOfLife.cellIsAlive(3,2);
+        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.cellIsAlive(2, 1);
+        gameOfLife.cellIsAlive(1, 2);
+        gameOfLife.cellIsAlive(3, 3);
+        gameOfLife.cellIsAlive(3, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
         assertThat(neighboursCount).isEqualTo(7);
     }
+
     @Test
     public void CheckThatGameFindsEightNeighbors() {
 
         gameOfLife.cellIsAlive(1, 3);
         gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1,1);
-        gameOfLife.cellIsAlive(2,1);
-        gameOfLife.cellIsAlive(1,2);
-        gameOfLife.cellIsAlive(3,3);
-        gameOfLife.cellIsAlive(3,2);
-        gameOfLife.cellIsAlive(3,1);
+        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.cellIsAlive(2, 1);
+        gameOfLife.cellIsAlive(1, 2);
+        gameOfLife.cellIsAlive(3, 3);
+        gameOfLife.cellIsAlive(3, 2);
+        gameOfLife.cellIsAlive(3, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 

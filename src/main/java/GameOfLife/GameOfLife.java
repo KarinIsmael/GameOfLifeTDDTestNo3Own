@@ -2,13 +2,13 @@ package GameOfLife;
 
 public class GameOfLife {
     int[][] grid;
-    int rowNumber;
-    int columnNumber;
+    int numberOfRow;
+    int numberOfColumn;
 
-    public GameOfLife(int RowNo, int ColumnNo){
-        grid = new int[RowNo][ColumnNo];
-        this.rowNumber = grid.length;
-        this.columnNumber = grid[0].length;
+    public GameOfLife(int numberOfRow, int numberOfColumn){ //rowLength, columnLength ?
+        grid = new int[numberOfRow][numberOfColumn];
+        this.numberOfRow = grid.length;
+        this.numberOfColumn = grid[0].length;
     }
 
     public int numberOfAliveNeighbours(int row, int column) {
@@ -28,7 +28,7 @@ public class GameOfLife {
 
         for (int[] ints : neighbourCounter) {
 
-            if (row >= 0 && column >= 0 && row < rowNumber && column < columnNumber) {
+            if (row >= 0 && column >= 0 && row < numberOfRow && column < numberOfColumn) {
                 aliveNeighbour += grid[ints[0]][ints[1]];
             }
         }
