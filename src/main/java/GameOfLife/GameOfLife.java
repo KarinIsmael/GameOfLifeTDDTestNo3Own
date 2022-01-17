@@ -5,7 +5,7 @@ public class GameOfLife {
     int numberOfRow;
     int numberOfColumn;
 
-    public GameOfLife(int numberOfRow, int numberOfColumn){ //rowLength, columnLength ?
+    public GameOfLife(int numberOfRow, int numberOfColumn){
         grid = new int[numberOfRow][numberOfColumn];
         this.numberOfRow = grid.length;
         this.numberOfColumn = grid[0].length;
@@ -28,8 +28,11 @@ public class GameOfLife {
 
         for (int[] ints : neighbourCounter) {
 
+            int checkRow = ints[0];
+            int checkColumn = ints[1];
+
             if (isInTheGameBoard(row, column)) {
-                aliveNeighbour += grid[ints[0]][ints[1]];
+                aliveNeighbour += grid[checkRow][checkColumn];
             }
         }
         return aliveNeighbour;
