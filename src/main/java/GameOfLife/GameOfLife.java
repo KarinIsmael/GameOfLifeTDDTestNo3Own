@@ -62,7 +62,8 @@ public class GameOfLife {
                    nextGeneration[row][column]=1;
                } else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==3) {
                    nextGeneration[row][column]=1;
-               }
+               } else if (deadCell(row,column) && numberOfAliveNeighbours(row, column) ==3)
+                   nextGeneration[row][column]=1;
             }
         }
 
@@ -75,6 +76,10 @@ public class GameOfLife {
 
     public boolean livingCell(int row, int column) {
         return grid[row][column] == 1;
+    }
+
+    public boolean deadCell(int row, int column) {
+        return grid[row][column] == 0;
     }
 
     private boolean aLiveCellHasLessThanTwoNeighbors(int row, int column) {
