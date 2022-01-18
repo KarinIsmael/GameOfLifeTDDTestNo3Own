@@ -5,15 +5,18 @@ public class GameOfLife {
     int numberOfRow;
     int numberOfColumn;
 
-    public GameOfLife(int numberOfRow, int numberOfColumn){
+    public GameOfLife(int numberOfRow, int numberOfColumn) {
         grid = new int[numberOfRow][numberOfColumn];
         this.numberOfRow = grid.length;
         this.numberOfColumn = grid[0].length;
     }
 
+    public void setLivingCellToGrid(int row, int column) {
+        grid[row][column] = 1;
+    }
+
     public int numberOfAliveNeighbours(int row, int column) {
 
-        int aliveNeighbour = 0;
 
         int[][] neighbourCounter = {
                 {row - 1, column - 1},
@@ -26,12 +29,14 @@ public class GameOfLife {
                 {row, column - 1},
         };
 
-        for (int[] ints : neighbourCounter) {
+        int aliveNeighbour = 0;
 
-            int checkRow = ints[0];
-            int checkColumn = ints[1];
+        for (int i = 0; i < neighbourCounter.length; i++) {
 
-            if (isInTheGameBoard(row, column)) {
+            int checkRow = neighbourCounter[i][0];
+            int checkColumn = neighbourCounter[i][1];
+
+            if (isInTheGameBoard(checkRow, checkColumn)) {
                 aliveNeighbour += grid[checkRow][checkColumn];
             }
         }
@@ -43,7 +48,31 @@ public class GameOfLife {
     }
 
 
-    public void cellIsAlive(int row, int column) {
-        grid[row][column] = 1;
+    public void evaluateNextGeneration() {
+
+        int[][] nextGeneration = new int[numberOfRow][numberOfColumn];
+
+        for (int row = 0; row < numberOfRow; row++) {
+            for (int column = 0; column < numberOfColumn; column++) {
+               if (aLiveCellHasLessThanTwoNeighbors(row, column)) {
+                   nextGeneration[row][column] = 0;
+               } else if (livingCell(row, column) && numberOfAliveNeighbours(row, column) > 3) {
+                   nextGeneration[row][column] = 0;
+               }
+
+            }
+        }
+
+        grid = nextGeneration.clone();
     }
+
+    public boolean livingCell(int row, int column) {
+        return grid[row][column] == 1;
+    }
+
+    private boolean aLiveCellHasLessThanTwoNeighbors(int row, int column) {
+        int checkNeighbors = numberOfAliveNeighbours(row, column);
+        return livingCell(row, column) && checkNeighbors < 2;
+    }
+
 }

@@ -3,17 +3,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class GameOfLifeTest {
+ class GameOfLifeTest {
 
     private final GameOfLife gameOfLife;
 
-    public GameOfLifeTest() {
+     GameOfLifeTest() {
         gameOfLife = new GameOfLife(4, 8);
     }
 
 
     @Test
-    public void OneAloneCellHasNoNeighbours() {
+     void oneAloneCellHasNoNeighbours() {
 
         int numberOfNeighbours = gameOfLife.numberOfAliveNeighbours(1, 2);
 
@@ -22,9 +22,9 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsOneNeighbor() {
+     void checkThatGameFindsOneNeighbor() {
 
-        gameOfLife.cellIsAlive(1, 3);
+        gameOfLife.setLivingCellToGrid(1, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -32,10 +32,10 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsTwoNeighbors() {
+     void checkThatGameFindsTwoNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -43,11 +43,11 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsThreeNeighbors() {
+     void checkThatGameFindsThreeNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -55,12 +55,12 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsFourNeighbors() {
+     void checkThatGameFindsFourNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
-        gameOfLife.cellIsAlive(2, 1);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCellToGrid(2, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -68,13 +68,13 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsFiveNeighbors() {
+     void checkThatGameFindsFiveNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
-        gameOfLife.cellIsAlive(2, 1);
-        gameOfLife.cellIsAlive(1, 2);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCellToGrid(2, 1);
+        gameOfLife.setLivingCellToGrid(1, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -82,14 +82,14 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsSixNeighbors() {
+     void checkThatGameFindsSixNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
-        gameOfLife.cellIsAlive(2, 1);
-        gameOfLife.cellIsAlive(1, 2);
-        gameOfLife.cellIsAlive(3, 3);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCellToGrid(2, 1);
+        gameOfLife.setLivingCellToGrid(1, 2);
+        gameOfLife.setLivingCellToGrid(3, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -97,15 +97,15 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsSevenNeighbors() {
+     void checkThatGameFindsSevenNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
-        gameOfLife.cellIsAlive(2, 1);
-        gameOfLife.cellIsAlive(1, 2);
-        gameOfLife.cellIsAlive(3, 3);
-        gameOfLife.cellIsAlive(3, 2);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCellToGrid(2, 1);
+        gameOfLife.setLivingCellToGrid(1, 2);
+        gameOfLife.setLivingCellToGrid(3, 3);
+        gameOfLife.setLivingCellToGrid(3, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -113,19 +113,41 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void CheckThatGameFindsEightNeighbors() {
+     void checkThatGameFindsEightNeighbors() {
 
-        gameOfLife.cellIsAlive(1, 3);
-        gameOfLife.cellIsAlive(2, 3);
-        gameOfLife.cellIsAlive(1, 1);
-        gameOfLife.cellIsAlive(2, 1);
-        gameOfLife.cellIsAlive(1, 2);
-        gameOfLife.cellIsAlive(3, 3);
-        gameOfLife.cellIsAlive(3, 2);
-        gameOfLife.cellIsAlive(3, 1);
+        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCellToGrid(2, 1);
+        gameOfLife.setLivingCellToGrid(1, 2);
+        gameOfLife.setLivingCellToGrid(3, 3);
+        gameOfLife.setLivingCellToGrid(3, 2);
+        gameOfLife.setLivingCellToGrid(3, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
         assertThat(neighboursCount).isEqualTo(8);
+    }
+
+    @Test
+    void cellLessThanTwoNeighborsDies(){
+        gameOfLife.setLivingCellToGrid(0,0);
+        gameOfLife.setLivingCellToGrid(0,1);
+
+        gameOfLife.evaluateNextGeneration();
+
+        assertThat(gameOfLife.livingCell(0,0)).isFalse();
+    }
+
+    @Test
+    void cellThatHasMoreThanThreeNeighborsDies(){
+       gameOfLife.setLivingCellToGrid(1, 3);
+       gameOfLife.setLivingCellToGrid(2, 3);
+       gameOfLife.setLivingCellToGrid(1, 1);
+       gameOfLife.setLivingCellToGrid(2, 1);
+
+       gameOfLife.evaluateNextGeneration();
+
+       assertThat(gameOfLife.livingCell(1,3)).isFalse();
     }
 }
