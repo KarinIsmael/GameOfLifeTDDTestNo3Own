@@ -58,9 +58,11 @@ public class GameOfLife {
                    nextGeneration[row][column] = 0;
                } else if (aLiveCellHasMoreThanThreeNeighbors(row, column)) {
                    nextGeneration[row][column] = 0;
-               }else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==2)
+               }else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==2) {
                    nextGeneration[row][column]=1;
-
+               } else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==3) {
+                   nextGeneration[row][column]=1;
+               }
             }
         }
 

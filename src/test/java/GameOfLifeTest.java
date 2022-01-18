@@ -161,4 +161,17 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
        assertThat(gameOfLife.livingCell(1,1)).isTrue();
     }
+
+
+    @Test
+    void anyLiveCellWithThreeLiveNeighborsLivesOnToTheNextGeneration(){
+       gameOfLife.setLivingCellToGrid(0, 0);
+       gameOfLife.setLivingCellToGrid(0, 1);
+       gameOfLife.setLivingCellToGrid(1, 1);
+       gameOfLife.setLivingCellToGrid(1, 0);
+
+       gameOfLife.evaluateNextGeneration();
+
+       assertThat(gameOfLife.livingCell(1,1)).isTrue();
+    }
 }
