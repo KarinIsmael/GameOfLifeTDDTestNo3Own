@@ -29,10 +29,11 @@ public class GameOfLife {
                 {row, column - 1},
         };
 
-        return getLivingNeighbors(neighbourCounter);
+        return checkLivingNeighbors(neighbourCounter);
     }
 
-    private int getLivingNeighbors(int[][] neighbourCounter) {
+    private int checkLivingNeighbors(int[][] neighbourCounter) {
+
         int livingNeighbors = 0;
 
         for (int i = 0; i < neighbourCounter.length; i++) {
@@ -44,6 +45,7 @@ public class GameOfLife {
                 livingNeighbors += grid[checkRow][checkColumn];
             }
         }
+
         return livingNeighbors;
     }
 
