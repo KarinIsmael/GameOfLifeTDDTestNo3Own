@@ -15,7 +15,7 @@ public class GameOfLife {
         grid[row][column] = 1;
     }
 
-    public int numberOfAliveNeighbours(int row, int column) {
+    public int calculateLivingNeighbors(int row, int column) {
 
 
         int[][] neighbourCounter = {
@@ -71,19 +71,19 @@ public class GameOfLife {
     }
 
     private boolean aDeadCellHasExactlyThreeNeighbors(int row, int column) {
-        return deadCell(row, column) && numberOfAliveNeighbours(row, column) == 3;
+        return deadCell(row, column) && calculateLivingNeighbors(row, column) == 3;
     }
 
     private boolean aLiveCellHasExactlyThreeNeighbors(int row, int column) {
-        return livingCell(row, column) && numberOfAliveNeighbours(row, column) == 3;
+        return livingCell(row, column) && calculateLivingNeighbors(row, column) == 3;
     }
 
     private boolean aLiveCellHasExactlyTwoNeighbors(int row, int column) {
-        return livingCell(row, column) && numberOfAliveNeighbours(row, column) == 2;
+        return livingCell(row, column) && calculateLivingNeighbors(row, column) == 2;
     }
 
     private boolean aLiveCellHasMoreThanThreeNeighbors(int row, int column) {
-        return livingCell(row, column) && numberOfAliveNeighbours(row, column) > 3;
+        return livingCell(row, column) && calculateLivingNeighbors(row, column) > 3;
     }
 
     public boolean livingCell(int row, int column) {
@@ -95,7 +95,7 @@ public class GameOfLife {
     }
 
     private boolean aLiveCellHasLessThanTwoNeighbors(int row, int column) {
-        int checkNeighbors = numberOfAliveNeighbours(row, column);
+        int checkNeighbors = calculateLivingNeighbors(row, column);
         return livingCell(row, column) && checkNeighbors < 2;
     }
 

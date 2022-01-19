@@ -14,7 +14,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void oneAloneCellHasNoNeighbours() {
 
-        int numberOfNeighbours = gameOfLife.numberOfAliveNeighbours(1, 2);
+        int numberOfNeighbours = gameOfLife.calculateLivingNeighbors(1, 2);
 
         assertThat(numberOfNeighbours).isZero();
 
@@ -25,7 +25,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
         gameOfLife.setLivingCell(1, 3);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(1);
     }
@@ -36,7 +36,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(1, 3);
         gameOfLife.setLivingCell(2, 3);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(2);
     }
@@ -48,7 +48,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(2, 3);
         gameOfLife.setLivingCell(1, 1);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(3);
     }
@@ -61,7 +61,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(1, 1);
         gameOfLife.setLivingCell(2, 1);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(4);
     }
@@ -75,7 +75,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(2, 1);
         gameOfLife.setLivingCell(1, 2);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(5);
     }
@@ -90,7 +90,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(1, 2);
         gameOfLife.setLivingCell(3, 3);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(6);
     }
@@ -106,7 +106,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(3, 3);
         gameOfLife.setLivingCell(3, 2);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(7);
     }
@@ -123,7 +123,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCell(3, 2);
         gameOfLife.setLivingCell(3, 1);
 
-        int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
+        int neighboursCount = gameOfLife.calculateLivingNeighbors(2, 2);
 
         assertThat(neighboursCount).isEqualTo(8);
     }
