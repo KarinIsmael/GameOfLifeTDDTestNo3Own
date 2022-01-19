@@ -62,12 +62,16 @@ public class GameOfLife {
                    nextGeneration[row][column]=1;
                } else if (aLiveCellHasExactlyThreeNeighbors(row, column)) {
                    nextGeneration[row][column]=1;
-               } else if (deadCell(row,column) && numberOfAliveNeighbours(row, column) ==3)
+               } else if (aDeadCellHasExactlyThreeNeighbors(row, column))
                    nextGeneration[row][column]=1;
             }
         }
 
         grid = nextGeneration.clone();
+    }
+
+    private boolean aDeadCellHasExactlyThreeNeighbors(int row, int column) {
+        return deadCell(row, column) && numberOfAliveNeighbours(row, column) == 3;
     }
 
     private boolean aLiveCellHasExactlyThreeNeighbors(int row, int column) {
