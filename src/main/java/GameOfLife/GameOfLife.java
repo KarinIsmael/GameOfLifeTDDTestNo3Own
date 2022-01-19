@@ -48,7 +48,7 @@ public class GameOfLife {
     }
 
 
-    public void evaluateNextGeneration() {
+    public void calculateNextGeneration() {
 
         int[][] nextGeneration = new int[numberOfRows][numberOfColumns];
 
@@ -58,7 +58,7 @@ public class GameOfLife {
                    nextGeneration[row][column] = 0;
                } else if (aLiveCellHasMoreThanThreeNeighbors(row, column)) {
                    nextGeneration[row][column] = 0;
-               }else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==2) {
+               }else if (aLiveCellHasExactlyTwoNeighbors(row, column)) {
                    nextGeneration[row][column]=1;
                } else if (livingCell(row,column) && numberOfAliveNeighbours(row, column) ==3) {
                    nextGeneration[row][column]=1;
@@ -68,6 +68,10 @@ public class GameOfLife {
         }
 
         grid = nextGeneration.clone();
+    }
+
+    private boolean aLiveCellHasExactlyTwoNeighbors(int row, int column) {
+        return livingCell(row, column) && numberOfAliveNeighbours(row, column) == 2;
     }
 
     private boolean aLiveCellHasMoreThanThreeNeighbors(int row, int column) {

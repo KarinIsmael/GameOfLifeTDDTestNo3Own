@@ -133,7 +133,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         gameOfLife.setLivingCellToGrid(0,0);
         gameOfLife.setLivingCellToGrid(0,1);
 
-        gameOfLife.evaluateNextGeneration();
+        gameOfLife.calculateNextGeneration();
 
         assertThat(gameOfLife.livingCell(0,0)).isFalse();
     }
@@ -145,7 +145,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
        gameOfLife.setLivingCellToGrid(1, 1);
        gameOfLife.setLivingCellToGrid(2, 1);
 
-       gameOfLife.evaluateNextGeneration();
+       gameOfLife.calculateNextGeneration();
 
        assertThat(gameOfLife.livingCell(1,3)).isFalse();
     }
@@ -156,7 +156,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
        gameOfLife.setLivingCellToGrid(0, 1);
        gameOfLife.setLivingCellToGrid(1, 1);
 
-       gameOfLife.evaluateNextGeneration();
+       gameOfLife.calculateNextGeneration();
 
        assertThat(gameOfLife.livingCell(1,1)).isTrue();
     }
@@ -168,7 +168,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
        gameOfLife.setLivingCellToGrid(1, 1);
        gameOfLife.setLivingCellToGrid(1, 0);
 
-       gameOfLife.evaluateNextGeneration();
+       gameOfLife.calculateNextGeneration();
 
        assertThat(gameOfLife.livingCell(1,1)).isTrue();
     }
@@ -179,7 +179,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
        gameOfLife.setLivingCellToGrid(0, 1);
        gameOfLife.setLivingCellToGrid(1, 1);
 
-       gameOfLife.evaluateNextGeneration();
+       gameOfLife.calculateNextGeneration();
 
        assertThat(gameOfLife.livingCell(1,0)).isTrue();
     }
