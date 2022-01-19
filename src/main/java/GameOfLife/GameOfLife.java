@@ -2,13 +2,13 @@ package GameOfLife;
 
 public class GameOfLife {
     int[][] grid;
-    int numberOfRow;
-    int numberOfColumn;
+    int numberOfRows;
+    int numberOfColumns;
 
-    public GameOfLife(int numberOfRow, int numberOfColumn) {
-        grid = new int[numberOfRow][numberOfColumn];
-        this.numberOfRow = grid.length;
-        this.numberOfColumn = grid[0].length;
+    public GameOfLife(int numberOfRows, int numberOfColumns) {
+        grid = new int[numberOfRows][numberOfColumns];
+        this.numberOfRows = grid.length;
+        this.numberOfColumns = grid[0].length;
     }
 
     public void setLivingCellToGrid(int row, int column) {
@@ -44,16 +44,16 @@ public class GameOfLife {
     }
 
     private boolean isInTheGameBoard(int row, int column) {
-        return row >= 0 && column >= 0 && row < numberOfRow && column < numberOfColumn;
+        return row >= 0 && column >= 0 && row < numberOfRows && column < numberOfColumns;
     }
 
 
     public void evaluateNextGeneration() {
 
-        int[][] nextGeneration = new int[numberOfRow][numberOfColumn];
+        int[][] nextGeneration = new int[numberOfRows][numberOfColumns];
 
-        for (int row = 0; row < numberOfRow; row++) {
-            for (int column = 0; column < numberOfColumn; column++) {
+        for (int row = 0; row < numberOfRows; row++) {
+            for (int column = 0; column < numberOfColumns; column++) {
                if (aLiveCellHasLessThanTwoNeighbors(row, column)) {
                    nextGeneration[row][column] = 0;
                } else if (aLiveCellHasMoreThanThreeNeighbors(row, column)) {
