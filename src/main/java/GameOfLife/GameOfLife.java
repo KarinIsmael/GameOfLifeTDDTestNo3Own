@@ -11,7 +11,7 @@ public class GameOfLife {
         this.numberOfColumns = grid[0].length;
     }
 
-    public void setLivingCellToGrid(int row, int column) {
+    public void setLivingCell(int row, int column) {
         grid[row][column] = 1;
     }
 

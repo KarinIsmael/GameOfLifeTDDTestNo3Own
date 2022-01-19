@@ -23,7 +23,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsOneNeighbor() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
+        gameOfLife.setLivingCell(1, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -33,8 +33,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsTwoNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -44,9 +44,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsThreeNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -56,10 +56,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsFourNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
-        gameOfLife.setLivingCellToGrid(2, 1);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
+        gameOfLife.setLivingCell(2, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -69,11 +69,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsFiveNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
-        gameOfLife.setLivingCellToGrid(2, 1);
-        gameOfLife.setLivingCellToGrid(1, 2);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
+        gameOfLife.setLivingCell(2, 1);
+        gameOfLife.setLivingCell(1, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -83,12 +83,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsSixNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
-        gameOfLife.setLivingCellToGrid(2, 1);
-        gameOfLife.setLivingCellToGrid(1, 2);
-        gameOfLife.setLivingCellToGrid(3, 3);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
+        gameOfLife.setLivingCell(2, 1);
+        gameOfLife.setLivingCell(1, 2);
+        gameOfLife.setLivingCell(3, 3);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -98,13 +98,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsSevenNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
-        gameOfLife.setLivingCellToGrid(2, 1);
-        gameOfLife.setLivingCellToGrid(1, 2);
-        gameOfLife.setLivingCellToGrid(3, 3);
-        gameOfLife.setLivingCellToGrid(3, 2);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
+        gameOfLife.setLivingCell(2, 1);
+        gameOfLife.setLivingCell(1, 2);
+        gameOfLife.setLivingCell(3, 3);
+        gameOfLife.setLivingCell(3, 2);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -114,14 +114,14 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     @Test
      void checkThatGameFindsEightNeighbors() {
 
-        gameOfLife.setLivingCellToGrid(1, 3);
-        gameOfLife.setLivingCellToGrid(2, 3);
-        gameOfLife.setLivingCellToGrid(1, 1);
-        gameOfLife.setLivingCellToGrid(2, 1);
-        gameOfLife.setLivingCellToGrid(1, 2);
-        gameOfLife.setLivingCellToGrid(3, 3);
-        gameOfLife.setLivingCellToGrid(3, 2);
-        gameOfLife.setLivingCellToGrid(3, 1);
+        gameOfLife.setLivingCell(1, 3);
+        gameOfLife.setLivingCell(2, 3);
+        gameOfLife.setLivingCell(1, 1);
+        gameOfLife.setLivingCell(2, 1);
+        gameOfLife.setLivingCell(1, 2);
+        gameOfLife.setLivingCell(3, 3);
+        gameOfLife.setLivingCell(3, 2);
+        gameOfLife.setLivingCell(3, 1);
 
         int neighboursCount = gameOfLife.numberOfAliveNeighbours(2, 2);
 
@@ -130,8 +130,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
     @Test
     void cellLessThanTwoNeighborsDies(){
-        gameOfLife.setLivingCellToGrid(0,0);
-        gameOfLife.setLivingCellToGrid(0,1);
+        gameOfLife.setLivingCell(0,0);
+        gameOfLife.setLivingCell(0,1);
 
         gameOfLife.calculateNextGeneration();
 
@@ -140,10 +140,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
     @Test
     void cellThatHasMoreThanThreeNeighborsDies(){
-       gameOfLife.setLivingCellToGrid(1, 3);
-       gameOfLife.setLivingCellToGrid(2, 3);
-       gameOfLife.setLivingCellToGrid(1, 1);
-       gameOfLife.setLivingCellToGrid(2, 1);
+       gameOfLife.setLivingCell(1, 3);
+       gameOfLife.setLivingCell(2, 3);
+       gameOfLife.setLivingCell(1, 1);
+       gameOfLife.setLivingCell(2, 1);
 
        gameOfLife.calculateNextGeneration();
 
@@ -152,9 +152,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
     @Test
     void anyLiveCellWithTwoLiveNeighborsLivesOnToTheNextGeneration(){
-       gameOfLife.setLivingCellToGrid(0, 0);
-       gameOfLife.setLivingCellToGrid(0, 1);
-       gameOfLife.setLivingCellToGrid(1, 1);
+       gameOfLife.setLivingCell(0, 0);
+       gameOfLife.setLivingCell(0, 1);
+       gameOfLife.setLivingCell(1, 1);
 
        gameOfLife.calculateNextGeneration();
 
@@ -163,10 +163,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
     @Test
     void anyLiveCellWithThreeLiveNeighborsLivesOnToTheNextGeneration(){
-       gameOfLife.setLivingCellToGrid(0, 0);
-       gameOfLife.setLivingCellToGrid(0, 1);
-       gameOfLife.setLivingCellToGrid(1, 1);
-       gameOfLife.setLivingCellToGrid(1, 0);
+       gameOfLife.setLivingCell(0, 0);
+       gameOfLife.setLivingCell(0, 1);
+       gameOfLife.setLivingCell(1, 1);
+       gameOfLife.setLivingCell(1, 0);
 
        gameOfLife.calculateNextGeneration();
 
@@ -175,9 +175,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
     @Test
     void anyDeadCellWithExactlyThreeLiveNeighborsBecomesALiveCell(){
-       gameOfLife.setLivingCellToGrid(0, 0);
-       gameOfLife.setLivingCellToGrid(0, 1);
-       gameOfLife.setLivingCellToGrid(1, 1);
+       gameOfLife.setLivingCell(0, 0);
+       gameOfLife.setLivingCell(0, 1);
+       gameOfLife.setLivingCell(1, 1);
 
        gameOfLife.calculateNextGeneration();
 
