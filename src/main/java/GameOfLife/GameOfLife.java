@@ -29,7 +29,11 @@ public class GameOfLife {
                 {row, column - 1},
         };
 
-        int aliveNeighbour = 0;
+        return getLivingNeighbors(neighbourCounter);
+    }
+
+    private int getLivingNeighbors(int[][] neighbourCounter) {
+        int livingNeighbors = 0;
 
         for (int i = 0; i < neighbourCounter.length; i++) {
 
@@ -37,10 +41,10 @@ public class GameOfLife {
             int checkColumn = neighbourCounter[i][1];
 
             if (isInTheGameBoard(checkRow, checkColumn)) {
-                aliveNeighbour += grid[checkRow][checkColumn];
+                livingNeighbors += grid[checkRow][checkColumn];
             }
         }
-        return aliveNeighbour;
+        return livingNeighbors;
     }
 
     private boolean isInTheGameBoard(int row, int column) {
